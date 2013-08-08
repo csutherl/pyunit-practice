@@ -7,7 +7,6 @@ class TestFoo(unittest.TestCase):
 
     def setUp(self):
         print "TestFoo setup."
-        super(TestFoo, self)
 
     def testFoo(self):
         self.foo = Foo(1, 1)
