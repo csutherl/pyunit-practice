@@ -2,13 +2,16 @@ __author__ = 'coty'
 
 import unittest
 from src.main.Foo import *
+from src.test.FooFixture import *
 
-class TestFoo(unittest.TestCase):
+# class TestFoo(unittest.TestCast):
+class TestFoo(FooFixture):
 
-    def setUp(self):
-        print "TestFoo setup."
+    # def setUp(self):
+    #     print "TestFoo setup."
 
-    def testFoo(self):
+    # def testFoo(self):
+    def runTest(self):
         self.foo = Foo(1, 1)
 
         # these should pass
@@ -19,4 +22,7 @@ class TestFoo(unittest.TestCase):
         assert self.foo.__first__ == 0
 
 if __name__ == "__main__":
-    unittest.main()
+    # unittest.main()
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestFoo)
+    t = unittest.TextTestRunner(verbosity=2).run(suite)
+    print t
