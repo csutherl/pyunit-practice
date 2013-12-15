@@ -5,7 +5,7 @@ import unittest
 # from src.test.TestFoo import *
 
 class FooFixture(unittest.TestCase):
-    def setup(self):
+    def setUp(self):
         print "Fixture setup."
 
 if __name__ == "__main__":
